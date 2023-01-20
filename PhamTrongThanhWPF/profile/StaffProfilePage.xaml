@@ -1,0 +1,31 @@
+﻿<Page x:Class="PhamTrongThanhWPF.profile.StaffProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PhamTrongThanhWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="Staff Profile Page">
+
+    <StackPanel Orientation="Vertical">
+        <Label Name="lblProfile" FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Center"
+                   Content="Profile"></Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Name="lblId" FontSize="16" HorizontalContentAlignment="Left" Width="300" Padding="150 0 0 10"
+                   Content="Id"></Label>
+            <Label Name="lblId1" FontSize="16" HorizontalAlignment="Center" Width="300"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Name="lblName" FontSize="16" HorizontalContentAlignment="Left" Width="300" Padding="150 0 0 10"
+                   Content="Full Name"></Label>
+            <Label Name="lblName1" FontSize="16" HorizontalAlignment="Center" Width="300"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Name="lblEmail" FontSize="16" HorizontalContentAlignment="Left" Width="300" Padding="150 0 0 10"
+                   Content="Email"></Label>
+            <Label Name="lblEmail1" FontSize="16" HorizontalAlignment="Center" Width="300"></Label>
+        </StackPanel>
+        <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" Width="50" HorizontalAlignment="Center" Margin="0 20 0 0"></Button>
+    </StackPanel>
+</Page>

@@ -1,0 +1,73 @@
+﻿<Window x:Class="PhamTrongThanhWPF.customer.AddCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamTrongThanhWPF.customer"
+        mc:Ignorable="d"
+        Title="Add Customer Window" Height="450" Width="400">
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <Label Name="lblAddCustomer" FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Center"
+                       Content="Add New Customer"></Label>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblCustomerId" Content="ID" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtCustomerId" Width="150"></TextBox>
+                    <Label Name="lblCustomerIdError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblCustomerName" Content="Name" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtCustomerName" Width="150"></TextBox>
+                    <Label Name="lblCustomerNameError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblMobile" Content="Mobile" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtMobile" Width="150"></TextBox>
+                    <Label Name="lblMobileError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblEmail" Content="Email" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtEmail" Width="150"></TextBox>
+                    <Label Name="lblEmailError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblPassword" Content="Password" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtPassword" Width="150"></TextBox>
+                    <Label Name="lblPasswordError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblIdentityCard" Content="Identity Card" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtIdentityCard" Width="150"></TextBox>
+                    <Label Name="lblIdentityCardError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblLicenceNumber" Content="Licence Number" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtLicenceNumber" Width="150"></TextBox>
+                    <Label Name="lblLicenceNumberError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblLicenceDate" Content="Licence Date" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <DatePicker Name="dpLicenceDate" Width="150"></DatePicker>
+                    <Label Name="lblLicenceDateError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            
+            <Button Name="btnAdd" Content="Add" Click="btnAdd_Click" Width="50" Margin="0 10 0 0"></Button>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

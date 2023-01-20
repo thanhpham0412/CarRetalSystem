@@ -1,0 +1,44 @@
+﻿<Window x:Class="PhamTrongThanhWPF.profile.UpdateStaffProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamTrongThanhWPF.profile"
+        mc:Ignorable="d"
+        Title="Update Staff Profile Window" Height="450" Width="400">
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <Label Name="lblUpdateProfile" FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Center"
+                       Content="Update Profile"></Label>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblStaffId" Content="ID" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtStaffId" Width="150" IsReadOnly="True"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblName" Content="Full Name" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtName" Width="150"></TextBox>
+                    <Label Name="lblNameError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblEmail" Content="Email" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtEmail" Width="150"></TextBox>
+                    <Label Name="lblEmailError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <Label Name="lblPassword" Content="Password" Width="200" Padding="100 0 0 0"></Label>
+                <StackPanel Orientation="Vertical"  Width="150">
+                    <TextBox Name="txtPassword" Width="150"></TextBox>
+                    <Label Name="lblPasswordError" Foreground="Red" Visibility="Collapsed"></Label>
+                </StackPanel>
+            </StackPanel>
+            
+            <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" Width="50" Margin="0 10 0 0"></Button>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
