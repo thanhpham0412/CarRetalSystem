@@ -20,14 +20,14 @@
             <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
                 <Label Name="lblPickupDate" Content="Pickup Date" Width="200" Padding="100 0 0 0"></Label>
                 <StackPanel Orientation="Vertical"  Width="150">
-                    <DatePicker Name="dpPickupDate" Width="150"></DatePicker>
+                    <DatePicker Name="dpPickupDate" Width="150" SelectedDateChanged="dpDate_SelectedDateChanged"></DatePicker>
                     <Label Name="lblPickupDateError" Foreground="Red" Visibility="Collapsed"></Label>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
                 <Label Name="lblReturnDate" Content="Return Date" Width="200" Padding="100 0 0 0"></Label>
                 <StackPanel Orientation="Vertical"  Width="150">
-                    <DatePicker Name="dpReturnDate" Width="150"></DatePicker>
+                    <DatePicker Name="dpReturnDate" Width="150" SelectedDateChanged="dpDate_SelectedDateChanged"></DatePicker>
                     <Label Name="lblReturnDateError" Foreground="Red" Visibility="Collapsed"></Label>
                 </StackPanel>
             </StackPanel>

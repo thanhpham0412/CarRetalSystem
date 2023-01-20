@@ -59,7 +59,8 @@ namespace DAO
             {
                 return dbContext.CarRentals.Where(c => c.CarId == carId)
                     .Where(c => (startDate < c.PickupDate && c.PickupDate < endDate) 
-                    || (startDate < c.ReturnDate && c.ReturnDate < endDate)).Count() == 0;
+                    || (startDate < c.ReturnDate && c.ReturnDate < endDate)
+                    || (startDate > c.PickupDate && c.ReturnDate > endDate)).Count() == 0;
             }
         }
 
