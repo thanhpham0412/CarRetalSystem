@@ -25,6 +25,11 @@ namespace Repo
             return CustomerDAO.Instance.getData();
         }
 
+        public List<Customer> getDataWithStr(string search)
+        {
+            return CustomerDAO.Instance.getDataWithStr(search);
+        }
+
         public void insertData(Customer t)
         {
             CustomerDAO.Instance.insertData(t);

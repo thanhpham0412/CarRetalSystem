@@ -34,11 +34,22 @@ namespace PhamTrongThanhWPF.customer
             dgCustomerManagement.ItemsSource = customers;
         }
 
+        private void loadDataWithStr(string search)
+        {
+            var customers = new CustomerRepository().getDataWithStr(search);
+            dgCustomerManagement.ItemsSource = customers;
+        }
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             var addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.ShowDialog();
             loadData();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            loadDataWithStr(txtSearch.Text.Trim());
         }
     }
 }

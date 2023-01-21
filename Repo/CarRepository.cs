@@ -24,6 +24,11 @@ namespace Repo
         {
             return CarDAO.Instance.getData();
         }
+        
+        public List<Car> getDataWithStr(string search)
+        {
+            return CarDAO.Instance.getDataWithStr(search);
+        }
 
         public List<Car> getCarAvailableByDate(DateTime startDate, DateTime endDate)
         {

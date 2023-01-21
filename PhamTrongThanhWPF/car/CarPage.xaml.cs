@@ -30,8 +30,13 @@ namespace PhamTrongThanhWPF.car
 
         private void loadData()
         {
-            CarRepository carRepository = new CarRepository();
-            var cars = carRepository.getData();
+            var cars = new CarRepository().getData();
+            dgCarManagement.ItemsSource = cars;
+        }
+
+        private void loadDataWithStr(string search)
+        {
+            var cars = new CarRepository().getDataWithStr(search);
             dgCarManagement.ItemsSource = cars;
         }
 
@@ -74,6 +79,11 @@ namespace PhamTrongThanhWPF.car
                     dgCarManagement.ItemsSource = new CarRepository().getData();
                 }
             }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            loadDataWithStr(txtSearch.Text);
         }
     }
 }

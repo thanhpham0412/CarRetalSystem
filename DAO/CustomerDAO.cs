@@ -53,6 +53,14 @@ namespace DAO
             }
         }
 
+        public List<Customer> getDataWithStr(string search)
+        {
+            using (var dbContext = new CarRentalSystemDBContext())
+            {
+                return dbContext.Customers.Where(c => c.CustomerName.Contains(search)).ToList();
+            }
+        }
+
         public void insertData(Customer t)
         {
             using (var dbContext = new CarRentalSystemDBContext())
