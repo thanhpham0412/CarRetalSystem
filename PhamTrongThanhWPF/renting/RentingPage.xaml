@@ -22,8 +22,11 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-            <Button Name="btnAdd" Content="Add" Click="btnAdd_Click" HorizontalAlignment="Center" Width="80" Margin="240 0 0 0"></Button>
+ 
+        <StackPanel Orientation="Horizontal">
+            <Button Name="btnAdd" Content="Add" Click="btnAdd_Click"  Width="80" Margin="180 0 40 0"></Button>
+            <Button Name="btnView" Content="View Report Statistic" Click="btnView_Click"  Width="80" Margin="40 0 180 0"></Button>
         </StackPanel>
     </StackPanel>
+    
 </Page>

@@ -53,14 +53,22 @@ namespace DAO
             }
         }
 
+        public List<CarRental> getListByCar(string carId)
+        {
+            using (var dbContext = new CarRentalSystemDBContext())
+            {
+                return dbContext.CarRentals.Where(cr => cr.CarId == carId).ToList();
+            }
+        }
+
         public Boolean isAvailableByDate(string carId, DateTime startDate, DateTime endDate)
         {
             using (var dbContext = new CarRentalSystemDBContext())
             {
                 return dbContext.CarRentals.Where(c => c.CarId == carId)
-                    .Where(c => (startDate < c.PickupDate && c.PickupDate < endDate) 
-                    || (startDate < c.ReturnDate && c.ReturnDate < endDate)
-                    || (startDate > c.PickupDate && c.ReturnDate > endDate)).Count() == 0;
+                    .Where(c => (startDate <= c.PickupDate && c.PickupDate <= endDate) 
+                    || (startDate <= c.ReturnDate && c.ReturnDate <= endDate)
+                    || (startDate >= c.PickupDate && c.ReturnDate >= endDate)).Count() == 0;
             }
         }
 

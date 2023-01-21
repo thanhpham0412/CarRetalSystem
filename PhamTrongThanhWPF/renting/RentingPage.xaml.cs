@@ -39,5 +39,11 @@ namespace PhamTrongThanhWPF.renting
             addRentingWindow.ShowDialog();
             loadData();
         }
+
+        private void btnView_Click(object sender, RoutedEventArgs e)
+        {
+            var reportStatisticWindow = new ReportStatisticWindow();
+            reportStatisticWindow.ShowDialog();
+        }
     }
 }

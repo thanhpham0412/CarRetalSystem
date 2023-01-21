@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 E:\workplace\prn211-projects\PhamTrongThanh_SE160037_A01\PhamTrongThanhWPF\App.xaml
-11826894018
+12948231192
 
-15-644201160
+16-85997992
 223-368212975
-car\AddCarWindow.xaml;car\CarPage.xaml;car\UpdateCarWindow.xaml;customer\AddCustomerWindow.xaml;customer\CustomerPage.xaml;LoginWindow.xaml;MainWindow.xaml;profile\StaffProfilePage.xaml;profile\UpdateStaffProfileWindow.xaml;renting\AddRentingWindow.xaml;renting\RentingPage.xaml;
+car\AddCarWindow.xaml;car\CarPage.xaml;car\UpdateCarWindow.xaml;customer\AddCustomerWindow.xaml;customer\CustomerPage.xaml;LoginWindow.xaml;MainWindow.xaml;profile\StaffProfilePage.xaml;profile\UpdateStaffProfileWindow.xaml;renting\AddRentingWindow.xaml;renting\RentingPage.xaml;renting\ReportStatisticWindow.xaml;
 
-False
+True
 

@@ -25,6 +25,11 @@ namespace Repo
             return CarRentalDAO.Instance.getData();
         }
 
+        public List<CarRental> getListByCar(string carId)
+        {
+            return CarRentalDAO.Instance.getListByCar(carId);
+        }
+
         public void insertData(CarRental t)
         {
             CarRentalDAO.Instance.insertData(t);

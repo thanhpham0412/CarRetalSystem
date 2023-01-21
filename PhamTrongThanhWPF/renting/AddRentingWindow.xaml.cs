@@ -119,10 +119,13 @@ namespace PhamTrongThanhWPF.renting
             if (pickupDate != null && returnDate != null 
                 && DateTime.Compare((DateTime)pickupDate, (DateTime)returnDate) < 0)
             {
+                lblReturnDateError.Visibility = Visibility.Collapsed;
                 var cars = new CarRepository().getCarAvailableByDate((DateTime)pickupDate, (DateTime)returnDate);
                 cbCar.ItemsSource = cars;
             } else
             {
+                lblReturnDateError.Content = "Pickup date must be before return date.";
+                lblReturnDateError.Visibility = Visibility.Visible;
                 cbCar.ItemsSource = null;
             }
 
