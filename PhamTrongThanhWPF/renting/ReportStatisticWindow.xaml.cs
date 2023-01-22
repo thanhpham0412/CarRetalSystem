@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Repo;
 using BusinessObject;
+using System.Collections;
+using System.Linq;
 
 namespace PhamTrongThanhWPF.renting
 {
@@ -21,11 +23,14 @@ namespace PhamTrongThanhWPF.renting
     /// </summary>
     public partial class ReportStatisticWindow : Window
     {
+        private DateTime? pickupDate;
+        private DateTime? returnDate;
+
         class ReportStatistic
         {
-            public string CarName { get; set; }
-            public int RentingDate { get; set; }
-            public decimal TotalPrice { get; set; }
+            public string? CarId { get; set; }
+            public int RentCount { get; set; }
+            public decimal SalesRevenue { get; set; }
         }
 
         public ReportStatisticWindow()
@@ -35,24 +40,35 @@ namespace PhamTrongThanhWPF.renting
 
         private void loadData()
         {
-            var startDate = (DateTime)dpPickupDate.SelectedDate;
-            var endDate = (DateTime)dpReturnDate.SelectedDate;
-            var repo = new CarRepository();
-            var cars = repo.getData();
-            var statictis = new List<ReportStatistic>();
-            foreach (var car in cars)
-            {
-                int days = repo.calculateRentingDateInPeriod(car.CarId, startDate, endDate);
-                statictis.Add(new ReportStatistic()
-                {
-                    CarName = car.CarName,
-                    RentingDate = days,
-                    TotalPrice = (decimal)car.RentPrice * days
-                });
-            }
-            statictis = statictis.OrderByDescending(x => x.TotalPrice).ToList();
-            dgReport.ItemsSource = statictis;
+            var startDate = (DateTime)pickupDate;
+            var endDate = (DateTime)returnDate;
 
+            var carRepo = new CarRepository();
+            var carRentalRepo = new CarRentalRepository();
+
+            var cars = carRepo.getData();
+            var carRentals = carRentalRepo.getData();
+
+            var reports = from carRental in carRentals
+                          where carRental.PickupDate >= startDate && carRental.PickupDate <= endDate
+                          group carRental by carRental.CarId into grouped
+                          select new ReportStatistic()
+                          {
+                              CarId = grouped.Key,
+                              RentCount = grouped.Count(),
+                              SalesRevenue = (decimal)grouped.Sum(item => item.RentPrice)
+                          };
+
+            List<ReportStatistic> reportList = reports.ToList();
+            reportList.OrderByDescending(r => r.SalesRevenue);
+
+            for (var i = 0; i < reportList.Count; i++)
+            {
+                var carName = cars.Where(c => c.CarId == reportList[i].CarId).First().CarName;
+                reportList[i].CarId = carName;
+            }
+
+            dgReport.ItemsSource = reportList;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
@@ -61,15 +77,17 @@ namespace PhamTrongThanhWPF.renting
             {
                 lblReturnDateError.Content = "Input required fields.";
                 lblReturnDateError.Visibility = Visibility.Visible;
-            } else
+            }
+            else
             {
-                DateTime? pickupDate = dpPickupDate.SelectedDate;
-                DateTime? returnDate = dpReturnDate.SelectedDate;
+                pickupDate = dpPickupDate.SelectedDate;
+                returnDate = dpReturnDate.SelectedDate;
                 if (DateTime.Compare((DateTime)pickupDate, (DateTime)returnDate) >= 0)
                 {
                     lblReturnDateError.Content = "Pickup date must be before return date.";
                     lblReturnDateError.Visibility = Visibility.Visible;
-                } else
+                }
+                else
                 {
                     loadData();
                     lblReturnDateError.Visibility = Visibility.Collapsed;

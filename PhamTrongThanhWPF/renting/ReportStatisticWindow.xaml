@@ -20,9 +20,9 @@
             <Button Name="btnSearch" Content="Search" Width="80" Click="btnSearch_Click"></Button>
             <DataGrid Name="dgReport" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="Car" Binding="{Binding CarName}"/>
-                    <DataGridTextColumn Width="*" Header="Renting Date" Binding="{Binding RentingDate}"/>
-                    <DataGridTextColumn Width="*" Header="Total Price" Binding="{Binding TotalPrice}"/>
+                    <DataGridTextColumn Width="*" Header="CarName" Binding="{Binding CarId}"/>
+                    <DataGridTextColumn Width="*" Header="RentCount" Binding="{Binding RentCount}"/>
+                    <DataGridTextColumn Width="*" Header="SalesRevenue" Binding="{Binding SalesRevenue}"/>
                 </DataGrid.Columns>
             </DataGrid>            
         </StackPanel>
